@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_home"
+        />
+    <item
+        android:id="@+id/food"
+        android:title="@string/menu_food"
+        android:icon="@drawable/ic_food"
+        />
+    <item
+        android:id="@+id/products"
+        android:title="@string/menu_products"
+        android:icon="@drawable/ic_products"
+        />
+    <item
+        android:id="@+id/services"
+        android:title="@string/menu_services"
+        android:icon="@drawable/ic_services"
+        />
+</menu>

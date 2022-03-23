@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Market</string>
+    <string name="menu_home">Incio</string>
+    <string name="menu_food">Alimentos</string>
+    <string name="menu_products">Productos</string>
+    <string name="menu_services">Servicios</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

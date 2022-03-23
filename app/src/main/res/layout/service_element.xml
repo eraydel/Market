@@ -1,0 +1,70 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    layout_height="match_parent"
+    layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        cardView:cardBackgroundColor="@color/white"
+        cardView:cardCornerRadius="8dp"
+        cardView:cardElevation="8dp"
+        cardView:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="189dp">
+
+            <ImageView
+                android:id="@+id/ivService"
+                android:layout_width="160dp"
+                android:layout_height="138dp"
+                android:scaleType="centerCrop"
+                cardView:layout_constraintEnd_toEndOf="parent"
+                cardView:layout_constraintStart_toStartOf="parent"
+                cardView:layout_constraintTop_toTopOf="parent"
+                tools:background="@tools:sample/backgrounds/scenic" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                cardView:layout_constraintBottom_toTopOf="@+id/tvName"
+                cardView:layout_constraintEnd_toEndOf="parent"
+                cardView:layout_constraintHorizontal_bias="0.0"
+                cardView:layout_constraintStart_toStartOf="parent"
+                cardView:layout_constraintTop_toBottomOf="@+id/ivService" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/roboto"
+                android:text="TextView"
+                android:textColor="@color/teal_700"
+                android:textSize="12sp"
+                cardView:layout_constraintEnd_toEndOf="parent"
+                cardView:layout_constraintHorizontal_bias="0.0"
+                cardView:layout_constraintStart_toStartOf="parent"
+                cardView:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
