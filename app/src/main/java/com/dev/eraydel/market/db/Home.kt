@@ -2,6 +2,7 @@ package com.dev.eraydel.market.db
 
 import android.content.Context
 import com.dev.eraydel.market.model.Food
+import com.dev.eraydel.market.model.FoodCategoryItems
 import com.dev.eraydel.market.model.Products
 import com.dev.eraydel.market.model.Services
 
@@ -56,6 +57,22 @@ class Home ( context: Context?) {
         tempArrayList.add(serviceTemp2)
         tempArrayList.add(serviceTemp3)
         tempArrayList.add(serviceTemp4)
+        return tempArrayList
+    }
+
+    fun getFoodItemsbySeller(id_seller: Int): ArrayList<FoodCategoryItems>
+    {
+        val tempArrayList = ArrayList<FoodCategoryItems>()
+        val foodItem1 = FoodCategoryItems(1,"Triple queso","Queso manchego, queso oaxaca, acompañado con papas a la francesa", 100,1,id_seller)
+        val foodItem2 = FoodCategoryItems(2,"Hawaina","Queso manchego y piña, acompañado con papas a la francesa", 85,1,id_seller)
+        val foodItem3 = FoodCategoryItems(3,"Doble","Queso con jamón acompañado con papas a la francesa", 70,1,id_seller)
+        val foodItem4 = FoodCategoryItems(4,"Sencilla","Queso con jamón acompañado con papas a la francesa", 60,1,id_seller)
+        val foodItem5 = FoodCategoryItems(4,"Jumbo","La que lleva de todo con papas a la francesa", 150,1,id_seller)
+        tempArrayList.add(foodItem1)
+        tempArrayList.add(foodItem2)
+        tempArrayList.add(foodItem3)
+        tempArrayList.add(foodItem4)
+        tempArrayList.add(foodItem5)
         return tempArrayList
     }
 

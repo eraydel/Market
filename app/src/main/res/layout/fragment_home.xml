@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".view.ui.fragments.home.HomeFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp">
 
@@ -33,6 +32,27 @@
                 tools:layout_editor_absoluteX="125dp"
                 tools:layout_editor_absoluteY="16dp" />
 
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8sp"
+                android:fontFamily="@font/roboto"
+                android:gravity="start"
+                android:onClick="clickBack"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textAllCaps="false"
+                android:textColor="@color/purple_200"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_menu"
+                app:iconPadding="0dp"
+                app:iconTint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+
             <TextView
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 android:layout_width="wrap_content"
@@ -41,6 +61,8 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text=" Palermo"
                 android:textColor="@color/purple_200" />
+
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.MaterialToolbar>

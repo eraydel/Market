@@ -3,17 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/fade_bg.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/ic_food.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1405" />
+        <entry key="app/src/main/res/layout/activity_item_food_details.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_story_tell1.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_story_tell2.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_story_tell3.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/food_category_item.xml" value="0.5" />
         <entry key="app/src/main/res/layout/food_element.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.25277777777777777" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2935323383084577" />
         <entry key="app/src/main/res/layout/fragment_products.xml" value="0.25277777777777777" />
         <entry key="app/src/main/res/layout/fragment_services.xml" value="0.25277777777777777" />
+        <entry key="app/src/main/res/layout/home_element.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/product_element.xml" value="0.37025641025641026" />
         <entry key="app/src/main/res/layout/product_element_binding.xml" value="0.37025641025641026" />
+        <entry key="app/src/main/res/layout/round_button.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/layout/service_element.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25277777777777777" />
         <entry key="app/src/main/res/menu/menu_toolbar.xml" value="0.30092592592592593" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1405" />
       </map>
     </option>
   </component>

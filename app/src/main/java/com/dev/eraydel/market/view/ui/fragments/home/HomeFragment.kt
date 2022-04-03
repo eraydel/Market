@@ -1,5 +1,6 @@
 package com.dev.eraydel.market.view.ui.fragments.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,8 @@ import com.dev.eraydel.market.model.Services
 import com.dev.eraydel.market.view.adapter.FoodAdapter
 import com.dev.eraydel.market.view.adapter.ProductsAdapter
 import com.dev.eraydel.market.view.adapter.ServiceAdapter
+import com.dev.eraydel.market.view.ui.activities.ItemFoodDetails
+import com.dev.eraydel.market.view.ui.activities.stories.StoryTell1
 
 
 class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.OnItemListener, ServiceAdapter.OnItemListener {
@@ -70,10 +73,11 @@ class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.On
 
     override fun miClick(food: Food) {
         Toast.makeText(requireContext(), "Title: ${food.title}", Toast.LENGTH_SHORT).show()
+        val intent =  Intent(activity, ItemFoodDetails::class.java)
+        intent.putExtra("id" , food.id)
+        startActivity(intent)
 
-        val bundle = Bundle()
-        bundle.putString("dato1", "${food.title}")
-        parentFragmentManager.setFragmentResult("datos",bundle)
+    //parentFragmentManager.setFragmentResult("datos",bundle)
     }
 
     override fun clickProduct(products: Products) {

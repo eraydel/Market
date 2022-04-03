@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Market">
         <activity
-            android:name=".view.ui.activities.HomeActivity"
+            android:name=".view.ui.activities.ItemFoodDetails"
             android:exported="false" />
         <activity
-            android:name=".view.ui.activities.MainActivity"
+            android:name=".view.ui.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.ui.activities.stories.StoryTell3"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activities.stories.StoryTell2"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activities.stories.StoryTell1"
+            android:exported="false"></activity>
+        <activity
+            android:name=".view.ui.activities.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.activities.MainActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
