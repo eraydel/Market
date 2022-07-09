@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnBack"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="106dp"
         android:layout_height="33dp"

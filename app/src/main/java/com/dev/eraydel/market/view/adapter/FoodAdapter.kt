@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dev.eraydel.market.R
 import com.dev.eraydel.market.databinding.FoodElementBinding
 import com.dev.eraydel.market.model.Food
+import com.dev.eraydel.market.model.FoodModel
+import com.dev.eraydel.market.view.ui.fragments.food.FoodFragment
 
-class FoodAdapter (private val context: Context , val food: ArrayList<Food>, val onItemListener: OnItemListener) : RecyclerView.Adapter<FoodAdapter.ViewHolder>()  {
+class FoodAdapter(private val context: Context, val food: ArrayList<Food>, val onItemListener: OnItemListener) : RecyclerView.Adapter<FoodAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodAdapter.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

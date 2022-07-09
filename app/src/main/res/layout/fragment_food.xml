@@ -1,40 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ui.fragments.FoodFragment"
-    android:background="@color/white"
-    >
+    tools:context=".view.ui.fragments.food.FoodFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        >
-        <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:title="@string/menu_food"
-            app:titleTextColor="@color/black"
-            />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/menu_food"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/btnInfoFood"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="30sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="12sp"
+            android:fontFamily="@font/roboto"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_200"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_info"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <TextView
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_food"
-        android:textColor="@color/teal_700"
-        android:textSize="18sp"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/foodSearch"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FAF5F5"
+        android:textCursorDrawable="@null"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar2"
+        app:queryBackground="@null" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFood"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/foodSearch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

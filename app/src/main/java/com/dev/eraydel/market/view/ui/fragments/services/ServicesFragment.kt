@@ -1,60 +1,163 @@
 package com.dev.eraydel.market.view.ui.fragments.services
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.lottie.LottieAnimationView
+import com.dev.eraydel.market.OnItemClickListener
 import com.dev.eraydel.market.R
+import com.dev.eraydel.market.adapter.ProductsAdapter
+import com.dev.eraydel.market.adapter.ServicesAdapter
+import com.dev.eraydel.market.api.APIService
+import com.dev.eraydel.market.databinding.FragmentProductsBinding
+import com.dev.eraydel.market.databinding.FragmentServicesBinding
+import com.dev.eraydel.market.model.FoodModel
+import com.dev.eraydel.market.model.ProductsModel
+import com.dev.eraydel.market.model.ServicesModel
+import com.dev.eraydel.market.response.ProductsResponse
+import com.dev.eraydel.market.response.ServicesResponse
+import com.dev.eraydel.market.view.ui.fragments.products.ProductsFragmentDetails
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ServicesFragment : Fragment() , OnItemClickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ServicesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ServicesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var adapter: ServicesAdapter
+    private lateinit var binding: FragmentServicesBinding
+    private val servicesItems = ArrayList<ServicesModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_services, container, false)
+        binding = FragmentServicesBinding.inflate(inflater,container,false)
+        initRecyclerView()
+        getServices()
+        setUpSearchView()
+        binding.btnInfoServices.setOnClickListener{
+            showInfo()
+        }
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ServicesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ServicesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun showInfo(){
+        // on below line we are creating a new bottom sheet dialog.
+        val dialog = BottomSheetDialog(requireContext())
+
+        // on below line we are inflating a layout file which we have created.
+        val view = layoutInflater.inflate(R.layout.show_animation, null)
+
+        view.findViewById<LottieAnimationView>(R.id.idAnimation).setAnimation(R.raw.servicesorder)
+        view.findViewById<TextView>(R.id.titleAnimation).text = "¿Necesitas a un experto?"
+        view.findViewById<TextView>(R.id.descriptionAnimation).text = "Contacta fácilmente con oficios y profesiones"
+
+        // below line is use to set cancelable to avoid
+        // closing of dialog box when clicking on the screen.
+        dialog.setCancelable(true)
+
+        // on below line we are setting
+        // content view to our view.
+        dialog.setContentView(view)
+
+        // on below line we are calling
+        // a show method to display a dialog.
+        dialog.show()
+    }
+
+
+
+    //getServices
+    private fun getServices()
+    {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call: Response<ServicesResponse> = getRetrofit().create(APIService::class.java).getServicesItems("servicesList")
+            val serResponse: ServicesResponse? =  call.body()
+            requireActivity().runOnUiThread {
+                if(call.isSuccessful)
+                {
+                    var items: ArrayList<ServicesModel> = (serResponse?.services ?: emptyArray<ServicesResponse>()) as ArrayList<ServicesModel>
+                    servicesItems.clear()
+                    servicesItems.addAll(items)
+                    adapter.notifyDataSetChanged()
                 }
             }
+        }
+    }
+
+    private fun setUpSearchView() {
+        binding.serviceSearch.queryHint = "¿Necesitas a un experto?"
+        binding.serviceSearch.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+
+        })
+    }
+
+    //initRecyclerView
+    private fun initRecyclerView(){
+
+        adapter = ServicesAdapter(servicesItems,this)
+
+        binding.rvService.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+
+        //binding.rvFood.addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+
+        binding.rvService.adapter = adapter
+
+    }
+
+    //retrofit
+    private fun getRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://demo7733613.mockable.io/api/v1/" )
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    override fun clickServicesItem(item: ServicesModel) {
+        Log.i("Service" , item.title)
+        val details = ServicesFragmentDetails()
+        val args = Bundle()
+        //sending the arguments...
+        var gson = Gson()
+        var jsonString = gson.toJson(item)
+        args.putString("item" , jsonString)
+
+        details.arguments = args
+        binding.rvService.isVisible = false
+        binding.materialToolbar2.isVisible = false
+        binding.serviceSearch.isVisible = false
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(binding.FragmentContainerServices.id, details).commit()
+    }
+
+    override fun clickFoodItem(food: FoodModel) {
+
+    }
+
+    override fun clickProductsItem(products: ProductsModel) {
+
     }
 }

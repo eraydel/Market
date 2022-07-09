@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dev.eraydel.market.R
 import com.dev.eraydel.market.databinding.FragmentHomeBinding
 import com.dev.eraydel.market.db.Home
 import com.dev.eraydel.market.model.Food
@@ -18,7 +17,6 @@ import com.dev.eraydel.market.view.adapter.FoodAdapter
 import com.dev.eraydel.market.view.adapter.ProductsAdapter
 import com.dev.eraydel.market.view.adapter.ServiceAdapter
 import com.dev.eraydel.market.view.ui.activities.ItemFoodDetails
-import com.dev.eraydel.market.view.ui.activities.stories.StoryTell1
 
 
 class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.OnItemListener, ServiceAdapter.OnItemListener {

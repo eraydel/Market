@@ -5,6 +5,7 @@
         android:id="@+id/home"
         android:title="@string/menu_home"
         android:icon="@drawable/ic_home"
+        
         />
     <item
         android:id="@+id/food"
