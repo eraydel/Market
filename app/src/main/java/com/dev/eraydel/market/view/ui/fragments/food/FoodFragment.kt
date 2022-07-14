@@ -105,6 +105,7 @@ class FoodFragment : Fragment(), OnItemClickListener {
                     var items: ArrayList<FoodModel> = (fodResponse?.food ?: emptyArray<FoodResponse>()) as ArrayList<FoodModel>
                     foodItems.clear()
                     foodItems.addAll(items)
+                    binding.progressBar.visibility = View.GONE
                     adapter.notifyDataSetChanged()
                 }
             }

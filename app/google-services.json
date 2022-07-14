@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "110274724012",
+    "project_id": "market-7cfb4",
+    "storage_bucket": "market-7cfb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110274724012:android:796a7c6baea43be88ddf09",
+        "android_client_info": {
+          "package_name": "com.dev.eraydel.market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110274724012-4g66b897dvqeti1iel393cf0r0ub6rus.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDWvPd-7xP2pRd1s6riHVjIqJ-05spziw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110274724012-4g66b897dvqeti1iel393cf0r0ub6rus.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -39,18 +39,25 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.home -> {
                     setThatFragment(homeFragment)
+                    true
                 }
                 R.id.food -> {
                     setThatFragment(foodFragment)
+                    true
                 }
                 R.id.products ->  {
                     setThatFragment(productsFragment)
+                    true
                 }
                 R.id.services -> {
                     setThatFragment(servicesFragment)
+                    true
+                }
+                else -> {
+                    false
                 }
             }
-            true
+
         }
 
     }

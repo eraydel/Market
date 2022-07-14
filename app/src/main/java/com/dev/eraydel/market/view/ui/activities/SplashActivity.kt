@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
         thread {
             Thread.sleep(3000)
-            val intent =  Intent(this,StoryTell1::class.java)
+            val intent =  Intent(this,MainActivity::class.java)
             startActivity(intent)
             finish()
         }

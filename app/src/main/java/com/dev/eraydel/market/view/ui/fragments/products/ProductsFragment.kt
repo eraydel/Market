@@ -97,6 +97,7 @@ class ProductsFragment : Fragment() , OnItemClickListener {
                     var items: ArrayList<ProductsModel> = (prodResponse?.products ?: emptyArray<ProductsResponse>()) as ArrayList<ProductsModel>
                     productsItems.clear()
                     productsItems.addAll(items)
+                    binding.progressBar.visibility = View.GONE
                     adapter.notifyDataSetChanged()
                 }
             }

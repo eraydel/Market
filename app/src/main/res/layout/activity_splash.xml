@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/fade_bg"
     tools:context=".view.ui.activities.SplashActivity">
 
 
@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Market Palermo"
+        android:text="Market "
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="16sp" />
+        android:textSize="28sp" />
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -29,11 +29,9 @@
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
-        android:layout_marginEnd="-11dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="Innovando para conectar a la comunidad"
+        android:text="Lo que buscas, en un solo lugar"
         android:textAlignment="center"
         android:textColor="@color/teal_700"
         android:textSize="12sp" />
@@ -53,27 +51,13 @@
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="114dp"
-        android:layout_height="115dp"
+        android:layout_width="75dp"
+        android:layout_height="92dp"
         android:layout_alignTop="@+id/tvTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="-110dp"
+        android:layout_marginTop="-91dp"
         android:src="@drawable/logo"
         app:tint="@color/purple_200" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/progressBar"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="249dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/roboto"
-        android:text="By Erick Ayala | Version 1.0"
-        android:textColor="@color/teal_700"
-        android:textSize="10sp" />
 
 </RelativeLayout>

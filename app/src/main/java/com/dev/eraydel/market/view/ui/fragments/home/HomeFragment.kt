@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dev.eraydel.market.R
 import com.dev.eraydel.market.databinding.FragmentHomeBinding
 import com.dev.eraydel.market.db.Home
 import com.dev.eraydel.market.model.Food
@@ -34,19 +35,24 @@ class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.On
         // Inflate the layout for this fragment
         // return inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.inflate(inflater , container ,false)
+        binding.idHomeAnimation.setAnimation(R.raw.welcome)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //displayData()
+    }
+
+    private fun displayData(){
         //Top food
         val data = Home(requireContext()).getTopFood()
         val adapter = FoodAdapter(requireContext(), data, this)
         with(binding){
             //RecyclerView require a LayoutManager
             val lm = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            rvFood.layoutManager = lm
-            rvFood.adapter = adapter
+            //rvFood.layoutManager = lm
+            //rvFood.adapter = adapter
         }
         //top products
         val dataProducts = Home(requireContext()).getTopProducts()
@@ -54,8 +60,8 @@ class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.On
         with(binding){
             //RecyclerView require a LayoutManager
             val lmp = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            rvProducts.layoutManager = lmp
-            rvProducts.adapter = adapterProducts
+            //rvProducts.layoutManager = lmp
+            //rvProducts.adapter = adapterProducts
         }
 
         // top services
@@ -64,8 +70,8 @@ class HomeFragment : Fragment() , FoodAdapter.OnItemListener, ProductsAdapter.On
         with(binding){
             //RecyclerView require a LayoutManager
             val lms = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            rvServices.layoutManager = lms
-            rvServices.adapter = adapterServices
+            //rvServices.layoutManager = lms
+            //rvServices.adapter = adapterServices
         }
     }
 

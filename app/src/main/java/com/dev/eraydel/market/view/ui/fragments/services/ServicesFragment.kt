@@ -94,6 +94,7 @@ class ServicesFragment : Fragment() , OnItemClickListener {
                     var items: ArrayList<ServicesModel> = (serResponse?.services ?: emptyArray<ServicesResponse>()) as ArrayList<ServicesModel>
                     servicesItems.clear()
                     servicesItems.addAll(items)
+                    binding.progressBar.visibility = View.GONE
                     adapter.notifyDataSetChanged()
                 }
             }

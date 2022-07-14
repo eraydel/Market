@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "685674376780",
+    "project_id": "ddam-14a01",
+    "storage_bucket": "ddam-14a01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685674376780:android:0747341f92a9409ad94ee9",
+        "android_client_info": {
+          "package_name": "com.dev.eraydel.market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685674376780-j4a7ghclig4t2b6kbgg0jrf3v9j2s4ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK6JYfphKhPKDl4WH2RjcdK0eOZKjm2K0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685674376780-j4a7ghclig4t2b6kbgg0jrf3v9j2s4ri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "685674376780-qstsv333ncle0r5f34q5jf5dr9arvoot.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dev.eraydel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
